@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int arr[5],n,i,j,k,swap;
+clrscr();
+printf("Enter the number of elements\n");
+scanf("%d", &n);
+printf("Enter %d elements \n", n);
+for(i=0;i<n;i++)
+scanf("%d", &arr[i]);
+for(i=0;i<n-1;i++)
+{
+k=i;
+for(j=i+1;j<n;j++)
+{
+if(arr[k]>arr[j])
+k=j;
+}
+if(k!=i)
+{
+swap=arr[i];
+arr[i]=arr[k];
+arr[k]=swap;
+}
+}
+printf("Sorted list using Selection Sort :\n");
+for(i=0;i<n;i++)
+printf("%d\n", arr[i]);
+getch();
+}
